@@ -12,6 +12,8 @@
       <h1>Movie Tracker</h1>
       <form id="movie-form">
         <input type="text" id="movie-title" placeholder="Movie Title" required />
+        <input type="number" id="movie-year" placeholder="Year" min="1888" max="2100" required />
+        <input type="file" id="movie-image" placeholder="Movie Image" required accept=".jpg, .png, .pdf" multiple/>
         <input type="text" id="movie-genre" placeholder="Genre" required />
         <input type="number" id="movie-rating" placeholder="Rating (1-10)" min="1" max="10" required />
         <button type="button" id="add-movie-btn">Add Movie</button>

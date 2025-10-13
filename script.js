@@ -7,19 +7,24 @@ function addMovie() {
   const movieList = document.getElementById("movie-list");
 
   const movieInfo =
+    movieImage.value +
+    " - " +
     movieTitle.value +
+    " - " +
+    movieYear.value +
     " - " +
     movieGenre.value +
     " - " +
-    movieRating.value +
-    "\n";
+    movieRating.value;
 
   console.log("button works " + movieInfo);
 
   // Clear input fields
   movieTitle.value = "";
   movieGenre.value = "";
+  movieYear.value = "";
   movieRating.value = "";
+  movieImage.value = "";
 
   // Create new list item
   const newListItem = document.createElement("li");
