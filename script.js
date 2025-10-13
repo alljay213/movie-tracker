@@ -2,6 +2,8 @@ function addMovie() {
   const movieTitle = document.getElementById("movie-title");
   const movieGenre = document.getElementById("movie-genre");
   const movieRating = document.getElementById("movie-rating");
+  const movieYear = document.getElementById("movie-year");
+  const movieImage = document.getElementById("movie-image");
   const movieList = document.getElementById("movie-list");
 
   const movieInfo =
