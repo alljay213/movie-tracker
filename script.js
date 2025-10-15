@@ -4,7 +4,7 @@ function addMovie() {
   const movieRating = document.getElementById("movie-rating");
   const movieYear = document.getElementById("movie-year");
   const movieImage = document.getElementById("movie-image");
-  const files = movieImage.files;
+
   const movieList = document.getElementById("movie-list");
 
   const movieInfo = `${movieImage.value} - ${movieTitle.value} - ${movieYear.value} - ${movieGenre.value} - ${movieRating.value}`;
@@ -17,6 +17,9 @@ function addMovie() {
 
   // Append new list item to movie list
   movieList.appendChild(newListItem);
+
+  // File object for image upload
+  const files = movieImage.files;
 
   // Create delete button
   const deleteButton = document.createElement("button");
