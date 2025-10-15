@@ -4,18 +4,10 @@ function addMovie() {
   const movieRating = document.getElementById("movie-rating");
   const movieYear = document.getElementById("movie-year");
   const movieImage = document.getElementById("movie-image");
+  const files = movieImage.files;
   const movieList = document.getElementById("movie-list");
 
-  const movieInfo =
-    movieImage.value +
-    " - " +
-    movieTitle.value +
-    " - " +
-    movieYear.value +
-    " - " +
-    movieGenre.value +
-    " - " +
-    movieRating.value;
+  const movieInfo = `${movieImage.value} - ${movieTitle.value} - ${movieYear.value} - ${movieGenre.value} - ${movieRating.value}`;
 
   console.log("button works " + movieInfo);
 
