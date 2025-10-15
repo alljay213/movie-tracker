@@ -15,6 +15,9 @@ function addMovie() {
   const newListItem = document.createElement("li");
   newListItem.textContent = movieInfo;
 
+  // Append new list item to movie list
+  movieList.appendChild(newListItem);
+
   // Create delete button
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
@@ -22,9 +25,6 @@ function addMovie() {
   deleteButton.addEventListener("click", function () {
     movieList.removeChild(newListItem);
   });
-
-  // Append new list item to movie list
-  movieList.appendChild(newListItem);
 
   // Clear input fields
   movieTitle.value = "";
