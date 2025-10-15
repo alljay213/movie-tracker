@@ -15,11 +15,28 @@ function addMovie() {
   const newListItem = document.createElement("li");
   newListItem.textContent = movieInfo;
 
-  // Append new list item to movie list
-  movieList.appendChild(newListItem);
-
   // File object for image upload
   const files = movieImage.files;
+
+  if (files && files.length) {
+    Array.from(files).forEach((file) => {
+      if (file.type.startsWith("image/")) {
+        const url = URL.createObjectURL(file);
+        const img = document.createElement("img");
+        img.src = url;
+        img.alt = movieTitle.value;
+        img.width = 100; // Set a fixed width for the image
+        img.onload = () => {
+          URL.revokeObjectURL(url); // Free up memory
+          newListItem.insertBefore(img, newListItem.firstChild); // Insert image at the start of the list item
+        };
+      } else {
+        const badge = document.createElement("em");
+        badge.textContent = ` [attached: ${file.name}]`;
+        newListItem.appendChild(badge);
+      }
+    });
+  }
 
   // Create delete button
   const deleteButton = document.createElement("button");
@@ -28,6 +45,9 @@ function addMovie() {
   deleteButton.addEventListener("click", function () {
     movieList.removeChild(newListItem);
   });
+
+  // Append new list item to movie list
+  movieList.appendChild(newListItem);
 
   // Clear input fields
   movieTitle.value = "";
