@@ -11,13 +11,6 @@ function addMovie() {
 
   console.log("button works " + movieInfo);
 
-  // Clear input fields
-  movieTitle.value = "";
-  movieGenre.value = "";
-  movieYear.value = "";
-  movieRating.value = "";
-  movieImage.value = "";
-
   // Create new list item
   const newListItem = document.createElement("li");
   newListItem.textContent = movieInfo;
@@ -32,6 +25,13 @@ function addMovie() {
 
   // Append new list item to movie list
   movieList.appendChild(newListItem);
+
+  // Clear input fields
+  movieTitle.value = "";
+  movieGenre.value = "";
+  movieYear.value = "";
+  movieRating.value = "";
+  movieImage.value = "";
 }
 
 document.getElementById("add-movie-btn").addEventListener("click", addMovie);
