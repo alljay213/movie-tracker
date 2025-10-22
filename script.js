@@ -7,7 +7,7 @@ function addMovie() {
 
   const movieList = document.getElementById("movie-list");
 
-  const movieInfo = `${movieImage.value} - ${movieTitle.value} - ${movieYear.value} - ${movieGenre.value} - ${movieRating.value}`;
+  const movieInfo = `${movieTitle.value} - ${movieYear.value} - ${movieGenre.value} - ${movieRating.value}`;
 
   console.log("button works " + movieInfo);
 
