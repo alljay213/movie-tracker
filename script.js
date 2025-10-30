@@ -22,7 +22,8 @@ function addMovie() {
     Array.from(files).forEach((file) => {
       if (file.type.startsWith("image/")) {
         const url = URL.createObjectURL(file);
-        const img = document.createElement("img");
+        const img = document.createEleme;
+        nt("img");
         img.src = url;
         img.alt = movieTitle.value;
         img.width = 100; // Set a fixed width for the image
