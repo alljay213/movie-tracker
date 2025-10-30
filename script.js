@@ -1,3 +1,19 @@
+let movies = [];
+
+function saveMovies() {
+  localStorage.setItem("movies", JSON.stringify(movies));
+}
+
+function loadMovies() {
+  const stored = localStorage.getItem("movies");
+  if (stored) {
+    movies = JSON.parse(stored);
+    movies.forEach(renderMovie);
+  }
+}
+
+loadMovies();
+
 function addMovie() {
   const movieTitle = document.getElementById("movie-title");
   const movieGenre = document.getElementById("movie-genre");
